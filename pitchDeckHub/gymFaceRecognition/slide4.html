@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Transformation Journey - Orrya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../shared/navigation.css">
+    <link rel="stylesheet" href="../shared/slide-constraints.css">
+    <style>
+        /* Copied styles from your original slide4.html */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .title-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            flex-grow: 1;
+        }
+        .steps-container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .step {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 29px;
+            width: 2px;
+            height: calc(100% - 30px);
+            background: linear-gradient(to bottom, #4CAF50, transparent);
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(76, 175, 80, 0.2);
+            border: 2px solid #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-right: 20px;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        .step-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .step-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .step-description {
+            font-size: 18px;
+            color: #e0e0e0;
+            line-height: 1.4;
+        }
+        .benefits-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 25px;
+        }
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        .benefit-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .benefit-text {
+            font-size: 16px;
+            line-height: 1.4;
+            color: #e0e0e0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        .accent-circle {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 50, 0.1);
+            bottom: -40px;
+            right: -40px;
+            z-index: 0;
+        }
+        @media (min-width: 992px) {
+            .content-container {
+                flex-direction: row;
+                align-items: stretch;
+            }
+            .steps-container {
+                width: 45%;
+            }
+            .benefits-container {
+                width: 55%;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="title-section">
+                <!-- NEW, MORE ACTIVE TITLE -->
+                <h1 class="title">YOUR JOURNEY TO A SMARTER GYM</h1>
+                <p class="subtitle">Effortless setup. Instant impact.</p>
+            </div>
+            
+            <div class="content-container">
+                <div class="steps-container">
+                    <!-- Step 1 with new text -->
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">INSTALL</div>
+                            <div class="step-description">We set up a discreet, powerful camera at your entry point.</div>
+                        </div>
+                    </div>
+                    <!-- Step 2 with new text -->
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">ENROLL</div>
+                            <div class="step-description">A one-time, 30-second selfie is all it takes for members.</div>
+                        </div>
+                    </div>
+                    <!-- Step 3 with new text -->
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">TRANSFORM</div>
+                            <div class="step-description">Go live and watch the magic happen as members walk in with a smile.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="benefits-container">
+                    <!-- Benefit 1 with new text -->
+                    <div class="benefit-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-plug benefit-icon"></i>
+                        <div class="benefit-title">Plays Well With Others</div>
+                        <p class="benefit-text">Works seamlessly with your <span class="highlight">existing turnstiles</span> and doors.</p>
+                    </div>
+                    <!-- Benefit 2 with new text -->
+                    <div class="benefit-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-cloud benefit-icon"></i>
+                        <div class="benefit-title">No IT Headaches</div>
+                        <p class="benefit-text"><span class="highlight">No servers</span> or complicated tech infrastructure needed. It just works.</p>
+                    </div>
+                    <!-- Benefit 3 with new text -->
+                    <div class="benefit-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-camera benefit-icon"></i>
+                        <div class="benefit-title">Effortless Onboarding</div>
+                        <p class="benefit-text">Member setup is <span class="highlight">faster than making a protein shake</span>.</p>
+                    </div>
+                    <!-- Benefit 4 with new text -->
+                    <div class="benefit-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-chart-line benefit-icon"></i>
+                        <div class="benefit-title">Actionable Insights</div>
+                        <p class="benefit-text">Understand peak hours and member flow to make <span class="highlight">smarter business decisions</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Navigation Elements -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <div class="slide-counter">
+        4 / 8
+    </div>
+    
+    <div class="slide-nav">
+        <a href="slide3.html" class="nav-button">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </a>
+        <a href="slide5.html" class="nav-button primary">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+</body>
+</html>

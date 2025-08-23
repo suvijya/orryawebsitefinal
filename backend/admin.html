@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orrya Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0A0A0A;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Login Form */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1A1A1A, #0A0A0A);
+        }
+
+        .login-form {
+            background: #1A1A1A;
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-form h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #4CAF50;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            background: #0A0A0A;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        .btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #388E3C;
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .error {
+            color: #f44336;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            display: none;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            color: #4CAF50;
+        }
+
+        .logout-btn {
+            background: #f44336;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            width: auto;
+        }
+
+        .logout-btn:hover {
+            background: #d32f2f;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #1A1A1A;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        /* Submissions Table */
+        .submissions-section {
+            background: #1A1A1A;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .filter-controls select {
+            background: #0A0A0A;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.25rem;
+            padding: 0.5rem;
+        }
+
+        .submissions-table {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: #0A0A0A;
+            font-weight: 600;
+            color: #4CAF50;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-new { background: #2196F3; color: white; }
+        .status-in_progress { background: #FF9800; color: white; }
+        .status-resolved { background: #4CAF50; color: white; }
+        .status-archived { background: #757575; color: white; }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-small {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+            width: auto;
+            min-width: auto;
+        }
+
+        .btn-secondary {
+            background: #757575;
+        }
+
+        .btn-secondary:hover {
+            background: #616161;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #1A1A1A;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .detail-row {
+            margin-bottom: 1rem;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #4CAF50;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-value {
+            color: #b0b0b0;
+        }
+
+        .message-content {
+            background: #0A0A0A;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            white-space: pre-wrap;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #b0b0b0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .submissions-table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+
+            .filter-controls {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div id="loginContainer" class="login-container">
+        <form id="loginForm" class="login-form">
+            <h1><i class="fas fa-shield-alt"></i> Admin Login</h1>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn" id="loginBtn">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            <div id="loginError" class="error"></div>
+        </form>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard">
+        <div class="container">
+            <div class="header">
+                <h1><i class="fas fa-tachometer-alt"></i> Contact Submissions Dashboard</h1>
+                <button id="logoutBtn" class="btn logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalSubmissions">-</div>
+                    <div class="stat-label">Total Submissions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="newSubmissions">-</div>
+                    <div class="stat-label">New</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="inProgressSubmissions">-</div>
+                    <div class="stat-label">In Progress</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="resolvedSubmissions">-</div>
+                    <div class="stat-label">Resolved</div>
+                </div>
+            </div>
+
+            <!-- Submissions Table -->
+            <div class="submissions-section">
+                <div class="section-header">
+                    <h2>Contact Submissions</h2>
+                    <div class="filter-controls">
+                        <select id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="new">New</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="resolved">Resolved</option>
+                            <option value="archived">Archived</option>
+                        </select>
+                        <button class="btn btn-small" id="refreshBtn">
+                            <i class="fas fa-refresh"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                <div class="submissions-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Company</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="submissionsTableBody">
+                            <tr>
+                                <td colspan="6" class="loading">Loading submissions...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submission Detail Modal -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Submission Details</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div id="modalContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const API_BASE = 'http://localhost:5000/api';
+        let authToken = localStorage.getItem('adminToken');
+
+        // DOM Elements
+        const loginContainer = document.getElementById('loginContainer');
+        const dashboard = document.getElementById('dashboard');
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('loginError');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const statusFilter = document.getElementById('statusFilter');
+        const refreshBtn = document.getElementById('refreshBtn');
+        const submissionsTableBody = document.getElementById('submissionsTableBody');
+        const detailModal = document.getElementById('detailModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Initialize
+        if (authToken) {
+            showDashboard();
+        }
+
+        // Login Form Handler
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const loginBtn = document.getElementById('loginBtn');
+
+            loginBtn.disabled = true;
+            loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+            loginError.textContent = '';
+
+            try {
+                const response = await fetch(`${API_BASE}/admin/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    authToken = data.token;
+                    localStorage.setItem('adminToken', authToken);
+                    showDashboard();
+                } else {
+                    loginError.textContent = data.error || 'Login failed';
+                }
+            } catch (error) {
+                loginError.textContent = 'Network error. Please try again.';
+            } finally {
+                loginBtn.disabled = false;
+                loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login';
+            }
+        });
+
+        // Logout Handler
+        logoutBtn.addEventListener('click', () => {
+            authToken = null;
+            localStorage.removeItem('adminToken');
+            showLogin();
+        });
+
+        // Filter and Refresh Handlers
+        statusFilter.addEventListener('change', loadSubmissions);
+        refreshBtn.addEventListener('click', () => {
+            loadStats();
+            loadSubmissions();
+        });
+
+        // Modal Handlers
+        closeModal.addEventListener('click', () => {
+            detailModal.classList.remove('active');
+        });
+
+        detailModal.addEventListener('click', (e) => {
+            if (e.target === detailModal) {
+                detailModal.classList.remove('active');
+            }
+        });
+
+        // Functions
+        function showLogin() {
+            loginContainer.style.display = 'flex';
+            dashboard.classList.remove('active');
+        }
+
+        function showDashboard() {
+            loginContainer.style.display = 'none';
+            dashboard.classList.add('active');
+            loadStats();
+            loadSubmissions();
+        }
+
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_BASE}/admin/stats`, {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const stats = data.stats;
+
+                    document.getElementById('totalSubmissions').textContent = stats.total_submissions || 0;
+                    document.getElementById('newSubmissions').textContent = stats.new_submissions || 0;
+                    document.getElementById('inProgressSubmissions').textContent = stats.in_progress_submissions || 0;
+                    document.getElementById('resolvedSubmissions').textContent = stats.resolved_submissions || 0;
+                } else if (response.status === 401) {
+                    showLogin();
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        async function loadSubmissions() {
+            submissionsTableBody.innerHTML = '<tr><td colspan="6" class="loading">Loading submissions...</td></tr>';
+
+            try {
+                const status = statusFilter.value;
+                const params = new URLSearchParams();
+                if (status) params.append('status', status);
+
+                const response = await fetch(`${API_BASE}/admin/submissions?${params}`, {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    renderSubmissions(data.data);
+                } else if (response.status === 401) {
+                    showLogin();
+                } else {
+                    submissionsTableBody.innerHTML = '<tr><td colspan="6" class="loading">Error loading submissions</td></tr>';
+                }
+            } catch (error) {
+                console.error('Error loading submissions:', error);
+                submissionsTableBody.innerHTML = '<tr><td colspan="6" class="loading">Network error</td></tr>';
+            }
+        }
+
+        function renderSubmissions(submissions) {
+            if (submissions.length === 0) {
+                submissionsTableBody.innerHTML = '<tr><td colspan="6" class="loading">No submissions found</td></tr>';
+                return;
+            }
+
+            submissionsTableBody.innerHTML = submissions.map(submission => `
+                <tr>
+                    <td>${new Date(submission.submitted_at).toLocaleDateString()}</td>
+                    <td>${submission.name}</td>
+                    <td>${submission.email}</td>
+                    <td>${submission.company || '-'}</td>
+                    <td><span class="status-badge status-${submission.status}">${submission.status.replace('_', ' ')}</span></td>
+                    <td class="action-buttons">
+                        <button class="btn btn-small btn-secondary" onclick="showSubmissionDetail(${submission.id})">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                        <select onchange="updateStatus(${submission.id}, this.value)" class="btn-small">
+                            <option value="">Change Status</option>
+                            <option value="new" ${submission.status === 'new' ? 'disabled' : ''}>New</option>
+                            <option value="in_progress" ${submission.status === 'in_progress' ? 'disabled' : ''}>In Progress</option>
+                            <option value="resolved" ${submission.status === 'resolved' ? 'disabled' : ''}>Resolved</option>
+                            <option value="archived" ${submission.status === 'archived' ? 'disabled' : ''}>Archived</option>
+                        </select>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function showSubmissionDetail(id) {
+            try {
+                const response = await fetch(`${API_BASE}/admin/submissions`, {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const submission = data.data.find(s => s.id === id);
+                    
+                    if (submission) {
+                        document.getElementById('modalContent').innerHTML = `
+                            <div class="detail-row">
+                                <div class="detail-label">Name</div>
+                                <div class="detail-value">${submission.name}</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Email</div>
+                                <div class="detail-value">${submission.email}</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Company</div>
+                                <div class="detail-value">${submission.company || 'Not provided'}</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Phone</div>
+                                <div class="detail-value">${submission.phone || 'Not provided'}</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Submitted</div>
+                                <div class="detail-value">${new Date(submission.submitted_at).toLocaleString()}</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Status</div>
+                                <div class="detail-value"><span class="status-badge status-${submission.status}">${submission.status.replace('_', ' ')}</span></div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Message</div>
+                                <div class="detail-value">
+                                    <div class="message-content">${submission.message}</div>
+                                </div>
+                            </div>
+                        `;
+                        detailModal.classList.add('active');
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading submission detail:', error);
+            }
+        }
+
+        async function updateStatus(id, newStatus) {
+            if (!newStatus) return;
+
+            try {
+                const response = await fetch(`${API_BASE}/admin/submissions/${id}/status`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ status: newStatus })
+                });
+
+                if (response.ok) {
+                    loadStats();
+                    loadSubmissions();
+                } else {
+                    alert('Failed to update status');
+                }
+            } catch (error) {
+                console.error('Error updating status:', error);
+                alert('Network error while updating status');
+            }
+        }
+    </script>
+</body>
+</html>

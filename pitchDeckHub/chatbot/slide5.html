@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Buying Leads. Start Creating Conversations. - Orrya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../shared/navigation.css">
+    <link rel="stylesheet" href="../shared/slide-constraints.css">
+    <style>
+        /* Copied styles from your original slide5.html */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .title-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+        .benefits-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 30px;
+            flex-grow: 1;
+        }
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .benefit-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .benefit-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        .benefit-text {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #e0e0e0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+        .accent-circle {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 50, 0.1);
+            bottom: -40px;
+            right: -40px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="title-section">
+                <h1 class="title">STOP BUYING LEADS. START CREATING CONVERSATIONS.</h1>
+                <p class="subtitle">This isn't a cost. It's a revenue-generating machine for your business.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="accent-circle"></div>
+                    <i class="fas fa-layer-group benefit-icon"></i>
+                    <div class="benefit-title">Capture More Leads</div>
+                    <p class="benefit-text">What if you could instantly capture <span class="highlight">30% more leads</span> from the website traffic you already have? That's the power of 24/7 engagement.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="accent-circle"></div>
+                    <i class="fas fa-rocket benefit-icon"></i>
+                    <div class="benefit-title">Increase Conversion Speed</div>
+                    <p class="benefit-text">Instantly qualified, hot leads are handed to your sales team, ready for a real conversation. This dramatically <span class="highlight">shortens your sales cycle</span>.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="accent-circle"></div>
+                    <i class="fas fa-tags benefit-icon"></i>
+                    <div class="benefit-title">Lower Acquisition Cost</div>
+                    <p class="benefit-text">By converting more of your organic traffic, you can <span class="highlight">reduce your monthly ad spend</span> and lower your overall customer acquisition cost (CAC).</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="accent-circle"></div>
+                    <i class="fas fa-user-tie benefit-icon"></i>
+                    <div class="benefit-title">Empower Your Sales Team</div>
+                    <p class="benefit-text">Let your best people focus on what they do best: closing deals. The engine handles the repetitive work, so they can handle the <span class="highlight">high-value relationships</span>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Navigation Elements -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <div class="slide-counter">
+        5 / 8
+    </div>
+    
+    <div class="slide-nav">
+        <a href="slide4.html" class="nav-button">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </a>
+        <a href="slide6.html" class="nav-button primary">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+</body>
+</html>

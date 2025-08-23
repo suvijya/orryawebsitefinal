@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Engine That Drives the Conversation - Orrya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../shared/navigation.css">
+    <link rel="stylesheet" href="../shared/slide-constraints.css">
+    <style>
+        /* Copied styles from your original slide6.html */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .title-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            flex-grow: 1;
+        }
+        .tech-features {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px;
+        }
+        .tech-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .tech-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .tech-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        .tech-text {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #e0e0e0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        .accent-circle {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 50, 0.1);
+            bottom: -40px;
+            right: -40px;
+            z-index: 0;
+        }
+        .stats-container {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .central-graphic {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0, 0.5), inset 0 0 20px rgba(76, 175, 80, 0.2);
+            border: 2px solid rgba(76, 175, 80, 0.3);
+        }
+        .central-graphic i {
+            font-size: 120px;
+            color: #4CAF50;
+            text-shadow: 0 0 25px rgba(76, 175, 80, 0.5);
+        }
+        
+        @media (min-width: 992px) {
+            .content-container {
+                flex-direction: row;
+                align-items: center;
+            }
+            .tech-features {
+                width: 60%;
+            }
+            .stats-container {
+                width: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="title-section">
+                <h1 class="title">THE ENGINE THAT DRIVES THE CONVERSATION</h1>
+                <p class="subtitle">Powerful, reliable technology designed for one purpose: generating leads.</p>
+            </div>
+            
+            <div class="content-container">
+                <div class="tech-features">
+                    <div class="tech-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-comments tech-icon"></i>
+                        <div class="tech-title">Natural Conversation AI</div>
+                        <p class="tech-text">Our engine is trained to understand intent and have <span class="highlight">human-like conversations</span>, not just follow rigid scripts.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="accent-circle"></div>
+                        <i class="fab fa-whatsapp tech-icon"></i>
+                        <div class="tech-title">Seamless Integration</div>
+                        <p class="tech-text">Engage leads on your website and instantly continue the conversation on <span class="highlight">WhatsApp</span>, where they are most comfortable.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-robot tech-icon"></i>
+                        <div class="tech-title">Automated Follow-ups</div>
+                        <p class="tech-text">The engine can intelligently <span class="highlight">nurture leads over time</span>, re-engaging them with relevant information to keep them warm.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-chart-bar tech-icon"></i>
+                        <div class="tech-title">Actionable Analytics</div>
+                        <p class="tech-text">Get clear insights into your busiest hours and most common questions to <span class="highlight">continuously improve</span> your sales process.</p>
+                    </div>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="central-graphic">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Navigation Elements -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <div class="slide-counter">
+        6 / 8
+    </div>
+    
+    <div class="slide-nav">
+        <a href="slide5.html" class="nav-button">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </a>
+        <a href="slide7.html" class="nav-button primary">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+</body>
+</html>

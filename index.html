@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Orrya - Innovation Architects | AI, IoT & System Design Consultancy</title>
+    <meta name="description" content="We don't just solve problems - we reimagine possibilities. Leading consultancy in AI/ML, IoT solutions, and system architecture.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Three.js for 3D effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loading-logo-section">
+                <div class="loading-logo-container">
+                    <div class="loading-logo-placeholder">
+                       <img src="topleft.png" alt="Orrya Logo" class="loading-logo-image">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="loading-text-sequence">
+                <div class="text-line original">
+                    <span class="word" data-word="problems">problems</span>
+                    <span class="word" data-word="are">are</span>
+                    <span class="word" data-word="just">just</span>
+                    <span class="word separator">...</span>
+                </div>
+                <div class="text-line transformed">
+                    <span class="word new" data-word="possibilities">possibilities</span>
+                    <span class="word new" data-word="in">in</span>
+                    <span class="word new" data-word="disguise">disguise</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="nav-logo-container">
+                    <div class="nav-logo-placeholder">
+                        <img src="topleft.png" alt="Orrya Logo" class="nav-logo-image">
+                    </div>
+                    <div class="nav-brand-text">
+                        <span class="logo-text">ORRYA</span>
+                        <span class="logo-subtitle">Innovation Architects</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#approach" class="nav-link">Approach</a>
+                <a href="case-studies.html" class="nav-link">Cases</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="nav-mobile">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#approach" class="nav-link">Approach</a>
+            <a href="case-studies.html" class="nav-link">Cases</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <button class="theme-toggle" id="mobileThemeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="heroCanvas" class="hero-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-tagline">
+                <div class="tagline-container">
+                    <span class="tagline-word" data-word="problems">problems</span>
+                    <span class="tagline-word" data-word="are">are</span>
+                    <span class="tagline-word" data-word="just">just</span>
+                    <span class="tagline-dots">...</span>
+                </div>
+                <div class="tagline-transform">
+                    <span class="tagline-word-new" data-word="possibilities">possibilities</span>
+                    <span class="tagline-word-new" data-word="in">in</span>
+                    <span class="tagline-word-new" data-word="disguise">disguise</span>
+                </div>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-line">We Don't Just Solve</span>
+                <span class="title-line hero-gradient">We Reimagine</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Innovation architects crafting tomorrow's solutions through AI, IoT, and system design. 
+                Where conventional thinking ends, transformation begins.
+            </p>
+            
+            <div class="hero-cta">
+                <button class="cta-primary" id="reimagineBtn">
+                    <span>Reimagine Your Challenge</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <a href="./pitchDeckHub/indexpitch.html" class="cta-secondary" id="viewWorkBtn">
+                    <span>View Our Work</span>
+                    <i class="fas fa-play"></i>
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" data-target="50">6</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="98">100</div>
+                    <div class="stat-label">Success Rate %</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="24">24</div>
+                    <div class="stat-label">Hour Response</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Discover More</span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Expertise</span>
+                <h2 class="section-title">Capabilities That <span class="gradient-text">Transform</span></h2>
+                <p class="section-subtitle">
+                    We architect solutions at the intersection of possibility and performance
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-tilt>
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="card-title">AI Engineering & ML</h3>
+                    <p class="card-description">
+                        From neural networks to generative AI, we build intelligent systems that learn, adapt, and evolve with your business needs.
+                    </p>
+                    <div class="card-tech">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>PyTorch</span>
+                        <span>GenAI</span>
+                    </div>
+                    <!--<a href="#" class="card-link">
+                        <span>Explore AI Solutions</span>
+                        <i class="fas fa-arrow-right"></i>-->
+                    </a>
+                </div>
+                
+                <div class="service-card" data-tilt>
+                    <div class="card-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="card-title">IoT Solutions</h3>
+                    <p class="card-description">
+                        Connected ecosystems that bridge physical and digital worlds, creating seamless experiences and actionable insights.
+                    </p>
+                    <div class="card-tech">
+                        <span>Raspberry Pi</span>
+                        <span>Arduino</span>
+                        <span>MQTT</span>
+                        <span>Edge Computing</span>
+                    </div>
+                    <!--  <a href="#" class="card-link">
+                        <span>Discover IoT</span>
+                        <i class="fas fa-arrow-right"></i>  -->
+                    </a>
+                </div>
+                
+                <div class="service-card" data-tilt>
+                    <div class="card-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="card-title">System Architecture & Full stack</h3>
+                    <p class="card-description">
+                        Scalable, resilient architectures that grow with your ambitions. From microservices to cloud-native solutions.
+                    </p>
+                    <div class="card-tech">
+                        <span>Cloud</span>
+                        <span>Microservices</span>
+                        <span>APIs</span>
+                        <span>DevOps</span>
+                    </div>
+                    <!--<a href="#" class="card-link">
+                        <span>View Architecture</span>
+                        <i class="fas fa-arrow-right"></i>-->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" class="approach">
+        <div class="container">
+            <div class="approach-content">
+                <div class="approach-text">
+                    <span class="section-tag">Our Philosophy</span>
+                    <h2 class="section-title">
+                        Norm-Breaking <span class="gradient-text">Innovation</span>
+                    </h2>
+                    <p class="approach-description">
+                        While others optimize existing solutions, we reimagine the problem itself. 
+                        Our approach isn't just about technical excellence—it's about seeing possibilities 
+                        where others see limitations.
+                    </p>
+                    
+                    <div class="approach-principles">
+                        <div class="principle">
+                            <div class="principle-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="principle-content">
+                                <h4>Question Everything</h4>
+                                <p>We start by challenging assumptions and reframing problems from first principles.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="principle">
+                            <div class="principle-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="principle-content">
+                                <h4>Prototype Rapidly</h4>
+                                <p>Ideas become reality through rapid iteration and continuous learning.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="principle">
+                            <div class="principle-icon">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                            <div class="principle-content">
+                                <h4>Scale Infinitely</h4>
+                                <p>Solutions designed for today's needs and tomorrow's possibilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="cases" class="cases">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Success Stories</span>
+                <h2 class="section-title">Transformations in <span class="gradient-text">Action</span></h2>
+                <p class="section-subtitle">
+                    Real challenges, reimagined solutions, measurable impact
+                </p>
+            </div>
+            
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-image">
+                        <div class="case-overlay">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-category">Data Transfer</div>
+                        <h3 class="case-title">SonicNet: High-Speed Data Transfer</h3>
+                        <p class="case-description">
+                            A custom networking protocol for ultra-low latency data transfer, achieving 2x faster speeds than standard TCP for real-time applications.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-value">2x</span>
+                                <span class="metric-label">Speed ↑</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">50%</span>
+                                <span class="metric-label">Latency ↓</span>
+                            </div>
+                        </div>
+                        <a href="cases/securenet.html" class="case-link">
+                            <span>View Case Study</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-image">
+                        <div class="case-overlay">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-category">SaaS Automation</div>
+                        <h3 class="case-title">InvoiceFlow: Automated Billing Platform</h3>
+                        <p class="case-description">
+                            Scalable platform combining OCR, RPA and workflow automation to process invoices at enterprise scale and save 500+ man-hours/month.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-value">6x</span>
+                                <span class="metric-label">Throughput</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">92%</span>
+                                <span class="metric-label">Error ↓</span>
+                            </div>
+                        </div>
+                        <a href="cases/invoiceflow.html" class="case-link">
+                            <span>View Case Study</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-image">
+                        <div class="case-overlay">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-category">AgriTech IoT</div>
+                        <h3 class="case-title">SmartFarm: Precision Agriculture</h3>
+                        <p class="case-description">
+                            IoT sensor networks and ML analytics enabled precision irrigation and increased yields by 25% in pilot deployments.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-value">25%</span>
+                                <span class="metric-label">Yield ↑</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">30%</span>
+                                <span class="metric-label">Water ↓</span>
+                            </div>
+                        </div>
+                        <a href="cases/smartfarm.html" class="case-link">
+                            <span>View Case Study</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-tag">Who We Are</span>
+                    <h2 class="section-title">
+                        Unbound by <span class="gradient-text">Convention</span>
+                    </h2>
+                    <p class="about-description">
+                        We're not your typical consultancy. As fresh minds in the innovation space, 
+                        we bring cutting-edge knowledge, fearless creativity, and the agility to 
+                        explore solutions others wouldn't dare attempt.
+                    </p>
+                    
+                    <div class="about-advantages">
+                        <div class="advantage">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Latest Technologies</h4>
+                                <p>Fresh from academia with hands-on experience in the newest frameworks and methodologies.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="advantage">
+                            <i class="fas fa-creative-commons-remix"></i>
+                            <div>
+                                <h4>Unconventional Thinking</h4>
+                                <p>Not limited by "how things have always been done" - we see fresh possibilities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="advantage">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Collaborative Approach</h4>
+                                <p>We work with you, not just for you, ensuring knowledge transfer and sustainable solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-cta">
+                        <a href="about.html" class="cta-primary">
+                            <span>Meet the Team</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="team-showcase">
+                        <div class="showcase-item">
+                            <div class="showcase-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="showcase-text">
+                                <h4>Full-Stack Expertise</h4>
+                                <p>From algorithms to interfaces</p>
+                            </div>
+                        </div>
+                        
+                        <div class="showcase-item">
+                            <div class="showcase-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="showcase-text">
+                                <h4>Academic Excellence</h4>
+                                <p>Top-tier education meets real-world application</p>
+                            </div>
+                        </div>
+                        
+                        <div class="showcase-item">
+                            <div class="showcase-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="showcase-text">
+                                <h4>Proven Results</h4>
+                                <p>Track record of successful innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Client Voices</span>
+                <h2 class="section-title">What Others <span class="gradient-text">Say</span></h2>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            "fresh perspective on my problem, gave me advice on how to turn my idea into a working "
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4> Shravan Jindal </h4>
+                                <p>Founder, Zoveit </p>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            "Working with them was was a really smooth experience. 
+                            Their IoT implementation transformed our entire operations."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Avichal arya</h4>
+                                <p>Founder, The Adorables Preschool</p>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            "The quality and delivery of the work is exceptional.
+                            To my problem, an innovative and budget friendly solution was delivered"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Kartik Nhm </h4>
+                                <p>Founder, Unvelit</p>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="nav-dot active" data-slide="0"></button>
+                <button class="nav-dot" data-slide="1"></button>
+                <button class="nav-dot" data-slide="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <span class="section-tag">Get Started</span>
+                    <h2 class="section-title">
+                        Ready to <span class="gradient-text">Reimagine</span>?
+                    </h2>
+                    <p class="contact-description">
+                        Every transformation begins with a conversation. Share your challenge, 
+                        and let's explore the possibilities together.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Email Us</h4>
+                                <p>suvijyaarya@orrya.co, vedantjain@orrya.co</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Call Us</h4>
+                                <p>+91 9582903559, +91 8287335130</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Response Time</h4>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="ai-ml">AI Engineering & ML</option>
+                                <option value="iot">IoT Solutions</option>
+                                <option value="architecture">System Architecture</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Challenge</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about the problem you'd like to reimagine..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">
+                            <span>Start the Conversation</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>We'll get back to you within 24 hours with ideas and next steps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <canvas id="contactCanvas" class="contact-canvas"></canvas>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">ORRYA</span>
+                        <span class="logo-subtitle">Innovation Architects</span>
+                    </div>
+                    <p class="footer-description">
+                        Transforming problems into possibilities through innovative technology solutions.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="#services">AI Engineering</a>
+                        <a href="#services">IoT Solutions</a>
+                        <a href="#services">System Architecture</a>
+                        <a href="#contact">Consultation</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#about">About Us</a>
+                        <a href="#cases">Case Studies</a>
+                        <a href="#approach">Our Approach</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Blog</a>
+                        <a href="#">Whitepapers</a>
+                        <a href="#">Open Source</a>
+                        <a href="#">Documentation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Orrya. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js" defer></script>
+</body>
+</html>

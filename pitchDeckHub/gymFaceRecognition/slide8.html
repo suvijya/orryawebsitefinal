@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begin Your Transformation Today - Orrya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../shared/navigation.css">
+    <link rel="stylesheet" href="../shared/slide-constraints.css">
+    <style>
+        /* Copied styles from your original slide8.html */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .title-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            flex-grow: 1;
+        }
+        .left-container, .right-container {
+            width: 100%;
+        }
+        .cta-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .cta-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .cta-title {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .cta-text {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            line-height: 1.5;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            background-color: #4CAF50;
+            color: #000;
+            font-size: clamp(1rem, 2.5vw, 1.375rem);
+            font-weight: 700;
+            padding: 18px 36px;
+            border-radius: 30px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            margin-top: 10px;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+        }
+        .button-icon {
+            margin-right: 12px;
+            font-size: 24px;
+        }
+        .arrow {
+            margin-left: 12px;
+            font-size: 20px;
+        }
+        .offer-badge {
+            background: linear-gradient(135deg, rgba(76, 175, 50, 0.2) 0%, rgba(76, 175, 50, 0.1) 100%);
+            border: 2px solid #4CAF50;
+            border-radius: 20px;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .offer-icon {
+            font-size: 32px;
+            color: #4CAF50;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        .offer-text {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 700;
+        }
+        .calendar-container {
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto;
+            aspect-ratio: 1 / 1;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .calendar-icon {
+            font-size: 100px;
+            color: #4CAF50;
+            margin-bottom: 25px;
+        }
+        .calendar-text {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+            width: 85%;
+        }
+        .calendar-day {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .day-available {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+        }
+        .day-selected {
+            background-color: #4CAF50;
+            color: #000;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+        }
+        .day-unavailable {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #666;
+        }
+        @media (min-width: 992px) {
+            .content-container {
+                flex-direction: row;
+                align-items: center;
+            }
+            .left-container {
+                width: 55%;
+            }
+            .right-container {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="title-section">
+                <!-- NEW, MORE EXCLUSIVE TITLE -->
+                <h1 class="title">BECOME A PIONEER. LEAD THE CHANGE.</h1>
+                <p class="subtitle">An invitation to join our exclusive Founding Partner Program.</p>
+            </div>
+            
+            <div class="content-container">
+                <div class="left-container">
+                    <div class="cta-card">
+                        <!-- NEW, MORE COMPELLING TEXT -->
+                        <h2 class="cta-title">ARE YOU THE RIGHT FIT?</h2>
+                        <p class="cta-text">We're looking for a select few forward-thinking gym owners to set a new standard in their city. Let's find out if you're ready to lead.</p>
+                        <a href="#" class="cta-button">
+                            <i class="fas fa-calendar-check button-icon"></i>
+                            Book Your Strategy Call
+                            <i class="fas fa-arrow-right arrow"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="offer-badge">
+                        <i class="fas fa-award offer-icon"></i>
+                        <!-- REVISED, MORE FOCUSED OFFER -->
+                        <div class="offer-text">
+                            As a Founding Partner, you'll secure <span class="highlight">exclusive preferential pricing</span> and be <span class="highlight">spotlighted as an industry innovator</span> in our future marketing.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-container">
+                    <div class="calendar-container">
+                        <i class="fas fa-user-tie calendar-icon"></i>
+                        <!-- UPDATED TEXT -->
+                        <div class="calendar-text">LIMITED SPOTS AVAILABLE</div>
+                        <div class="calendar-days">
+                            <div class="calendar-day day-unavailable">M</div>
+                            <div class="calendar-day day-available">T</div>
+                            <div class="calendar-day day-selected">W</div>
+                            <div class="calendar-day day-available">T</div>
+                            <div class="calendar-day day-available">F</div>
+                            <div class="calendar-day day-unavailable">S</div>
+                            <div class="calendar-day day-unavailable">S</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Navigation Elements -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <div class="slide-counter">
+        8 / 8
+    </div>
+    
+    <div class="slide-nav">
+        <a href="slide7.html" class="nav-button">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </a>
+        <a href="../index.html" class="nav-button primary">
+            <i class="fas fa-home"></i>
+            Back to Hub
+        </a>
+    </div>
+</body>
+</html>

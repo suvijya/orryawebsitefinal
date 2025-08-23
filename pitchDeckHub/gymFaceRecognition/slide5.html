@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orrya Doesn't Cost Money. It Finds It. - Orrya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../shared/navigation.css">
+    <link rel="stylesheet" href="../shared/slide-constraints.css">
+    <style>
+        /* Copied styles from your original slide5.html */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .title-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+        .benefits-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 30px;
+            flex-grow: 1;
+        }
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .benefit-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .benefit-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        .benefit-text {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #e0e0e0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+        .accent-circle {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 50, 0.1);
+            bottom: -40px;
+            right: -40px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="title-section">
+                <!-- NEW, MORE CREDIBLE TITLE -->
+                <h1 class="title">ORRYA DOESN'T COST MONEY. IT FINDS IT.</h1>
+                <p class="subtitle">Let's look at the potential impact on a gym just like yours.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <!-- Card 1: Revenue Recovery -->
+                <div class="benefit-card">
+                    <div class="accent-circle"></div>
+                    <i class="fas fa-magnet benefit-icon"></i>
+                    <div class="benefit-title">Revenue Recovery</div>
+                    <p class="benefit-text">Imagine just 10 people are sharing memberships. At an average of ₹1500/month, that's <span class="highlight">₹1,80,000 per year</span> that Orrya recovers for you.</p>
+                </div>
+                
+                <!-- Card 2: Staff Potential -->
+                <div class="benefit-card">
+                    <div class="accent-circle"></div>
+                    <i class="fas fa-user-plus benefit-icon"></i>
+                    <div class="benefit-title">Unleash Staff Potential</div>
+                    <p class="benefit-text">What if your staff had an extra 30 hours a month? That's more time for personal training, sales, and service that can generate <span class="highlight">thousands in new revenue</span>.</p>
+                </div>
+                
+                <!-- Card 3: Member Loyalty -->
+                <div class="benefit-card">
+                    <div class="accent-circle"></div>
+                    <i class="fas fa-hand-holding-heart benefit-icon"></i>
+                    <div class="benefit-title">Boost Member Loyalty</div>
+                    <p class="benefit-text">A unique, secure experience makes members stay longer. Just a small drop in cancellations means a <span class="highlight">significant increase</span> in lifetime customer value.</p>
+                </div>
+                
+                <!-- Card 4: Brand Value -->
+                <div class="benefit-card">
+                    <div class="accent-circle"></div>
+                    <i class="fas fa-star benefit-icon"></i>
+                    <div class="benefit-title">Build a Premium Brand</div>
+                    <p class="benefit-text">Being the most modern gym in your area allows you to attract high-value members and justify <span class="highlight">premium pricing</span>, separating you from the competition.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Navigation Elements -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <div class="slide-counter">
+        5 / 8
+    </div>
+    
+    <div class="slide-nav">
+        <a href="slide4.html" class="nav-button">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </a>
+        <a href="slide6.html" class="nav-button primary">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+</body>
+</html>

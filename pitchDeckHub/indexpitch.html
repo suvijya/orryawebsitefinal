@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orrya - Pitch Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .hub-container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .logo-section {
+            margin-bottom: 60px;
+        }
+        
+        .logo {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            background: linear-gradient(90deg, #4CAF50, #ffffff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 500;
+            color: #a0a0a0;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-text {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: #e0e0e0;
+            max-width: 600px;
+            margin: 0 auto 80px auto;
+            line-height: 1.6;
+        }
+        
+        .decks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .deck-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .deck-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4CAF50, #81C784);
+        }
+        
+        .deck-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .deck-icon {
+            font-size: 80px;
+            color: #4CAF50;
+            margin-bottom: 30px;
+        }
+        
+        .deck-title {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .deck-description {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #b0b0b0;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+        
+        .deck-button {
+            background-color: #4CAF50;
+            color: #000;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-weight: 700;
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .deck-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+            background-color: #5CBF60;
+        }
+        
+        .button-arrow {
+            margin-left: 12px;
+            font-size: 18px;
+        }
+        
+        .footer-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            color: #888;
+        }
+        
+        .footer-text {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            font-size: clamp(0.8rem, 1.8vw, 1rem);
+        }
+        
+        @media (max-width: 768px) {
+            .decks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hub-container">
+        <div class="logo-section">
+            <h1 class="logo">ORRYA</h1>
+            <p class="tagline">Transforming Ideas into Revenue</p>
+            <p class="welcome-text">
+                Welcome to our pitch hub. Explore our innovative solutions designed to revolutionize 
+                how businesses engage with their customers and optimize their operations.
+            </p>
+        </div>
+        
+        <div class="decks-grid">
+            <div class="deck-card">
+                <i class="fas fa-comments deck-icon"></i>
+                <h2 class="deck-title">Conversation Engine</h2>
+                <p class="deck-description">
+                    Turn your website traffic into meaningful conversations and qualified leads. 
+                    Our AI-powered chatbot transforms passive visitors into engaged prospects.
+                </p>
+                <a href="chatbot/slide1.html" class="deck-button">
+                    View Presentation
+                    <i class="fas fa-arrow-right button-arrow"></i>
+                </a>
+            </div>
+            
+            <div class="deck-card">
+                <i class="fas fa-dumbbell deck-icon"></i>
+                <h2 class="deck-title">Gym Face Recognition</h2>
+                <p class="deck-description">
+                    Revolutionary facial recognition system for gyms. Streamline member check-ins, 
+                    enhance security, and provide personalized fitness experiences.
+                </p>
+                <a href="gymFaceRecognition/slide1.html" class="deck-button">
+                    View Presentation
+                    <i class="fas fa-arrow-right button-arrow"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <p class="footer-text">
+                These presentations showcase our latest innovations in AI-driven business solutions.
+            </p>
+            <div class="contact-info">
+                <p>© 2025 Orrya. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

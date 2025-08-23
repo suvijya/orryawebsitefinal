@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Orrya | Innovation Architects Team</title>
+    <meta name="description" content="Meet the innovation architects behind Orrya. Our team of experts in AI/ML, IoT solutions, and system architecture who transform problems into possibilities.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="nav-logo-container">
+                    <div class="nav-logo-placeholder">
+                        <img src="topleft.png" alt="Orrya Logo" class="nav-logo-image">
+                    </div>
+                    <div class="nav-brand-text">
+                        <span class="logo-text">ORRYA</span>
+                        <span class="logo-subtitle">Innovation Architects</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#approach" class="nav-link">Approach</a>
+                <a href="index.html#cases" class="nav-link">Cases</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="section-tag">Our Story</div>
+                <h1 class="about-hero-title">
+                    <span class="title-line">The Minds Behind</span>
+                    <span class="title-line hero-gradient">The Innovation</span>
+                </h1>
+                <p class="about-hero-subtitle">
+                    We are a collective of passionate innovators, problem-solvers, and dreamers who believe that every challenge is an opportunity to create something extraordinary.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Team</span>
+                <h2 class="section-title">Innovation <span class="gradient-text">Architects</span></h2>
+                <p class="section-subtitle">
+                    Meet the experts who turn complex challenges into breakthrough solutions
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card" data-tilt>
+                    <div class="team-image">
+                        <img src="suvijya.jpg" alt="Suvijya Arya - Co-Founder" class="founder-image">
+                        <div class="image-overlay"></div>
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="https://www.linkedin.com/in/suvijya-arya-564404325/" class="social-link" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/suvijya" class="social-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="mailto:suvijyaarya@orrya.co" class="social-link" title="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="tel:+918287335130" class="social-link" title="Phone">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Suvijya Arya</h3>
+                        <p class="team-role">Co-Founder</p>
+                        <div class="team-expertise">
+                            <span>IoT Solutions</span>
+                            <span>Hardware Design</span>
+                            <span>AIML</span>
+                            <span>Innovation</span>
+                            
+                        </div>
+                        <p class="team-bio">
+                            Expert in connected ecosystems and hardware integration. Specializes in bridging physical and digital worlds through innovative IoT solutions and cutting-edge technology.
+                        </p>
+                        <div class="team-contact">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>suvijyaarya@orrya.co</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 8287335130</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-buttons">
+                            <a href="https://www.linkedin.com/in/suvijya-arya-564404325/" class="contact-button linkedin" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/suvijya" class="contact-button github" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="mailto:suvijyaarya@orrya.co" class="contact-button email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card" data-tilt>
+                    <div class="team-image">
+                        <img src="vedant.png" alt="Suvijya Arya - Co-Founder" class="founder-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                            <span class="placeholder-text">Add Photo</span>
+                        </div>
+                        <div class="image-overlay"></div>
+                        <div class="team-overlay">
+                            
+                            <div class="team-social">
+                                <a href="https://www.linkedin.com/in/vedant-jain-950684323/" class="social-link" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/ego004" class="social-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="mailto:vedantjain@orrya.co" class="social-link" title="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="tel:9582903559" class="social-link" title="Phone">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Vedant Jain</h3>
+                        <p class="team-role">Co-Founder</p>
+                        <div class="team-expertise">
+                            <span>AI/ML</span>
+                            <span>System Architecture</span>
+                            <span>Cloud Computing</span>
+                            <span>Innovation</span>
+                        </div>
+                        <p class="team-bio">
+                            building scalable AI systems and leading technical teams. Passionate about transforming complex algorithms into practical solutions that drive business value.
+                            
+                        </p>
+                        <div class="team-contact">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>vedantjain@orrya.co</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 9582903559</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-buttons">
+                            <a href="https://www.linkedin.com/in/vedant-jain-950684323/" class="contact-button linkedin" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/ego004" class="contact-button github" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="mailto:vedantjain@orrya.co" class="contact-button email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Values</span>
+                <h2 class="section-title">What Drives <span class="gradient-text">Us</span></h2>
+                <p class="section-subtitle">
+                    The principles that guide our innovation and shape our culture
+                </p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation First</h3>
+                    <p class="value-description">
+                        We don't just follow trends - we create them. Every challenge is an opportunity to pioneer new solutions.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Collaborative Partnership</h3>
+                    <p class="value-description">
+                        We work with you, not just for you. Your success is our success, and we're invested in long-term relationships.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Ethical Technology</h3>
+                    <p class="value-description">
+                        Technology should serve humanity. We build solutions that are responsible, sustainable, and beneficial for all.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="value-title">Continuous Learning</h3>
+                    <p class="value-description">
+                        In a rapidly evolving field, we never stop learning. We stay ahead by constantly exploring new possibilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="about-cta-section">
+        <div class="container">
+            <div class="about-cta-content">
+                <h2 class="cta-title">Ready to <span class="gradient-text">Innovate Together?</span></h2>
+                <p class="cta-subtitle">
+                    Let's transform your challenges into breakthrough opportunities. Our team is ready to architect your next innovation.
+                </p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="cta-primary">
+                        <span>Start Your Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="./pitchDeckHub/indexpitch.html" class="cta-secondary">
+                        <span>View Our Work</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">ORRYA</span>
+                        <span class="logo-subtitle">Innovation Architects</span>
+                    </div>
+                    <p class="footer-description">
+                        Transforming problems into possibilities through innovative technology solutions.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/orrya/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="index.html#services">AI Engineering</a>
+                        <a href="index.html#services">IoT Solutions</a>
+                        <a href="index.html#services">System Architecture</a>
+                        <a href="index.html#services">Digital Transformation</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="index.html#cases">Case Studies</a>
+                        <a href="index.html#approach">Our Approach</a>
+                        <a href="#">Careers</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Blog</a>
+                        <a href="#">Documentation</a>
+                        <a href="#">Support</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Orrya. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: #000;
+            color: #fff;
+        }
+        .test-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .test-button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Button Testing Page</h1>
+    
+    <h2>Direct Link Tests:</h2>
+    <a href="pitchDeckHub/indexpitch.html" class="test-button" target="_blank">Test Link 1: pitchDeckHub/indexpitch.html</a><br>
+    <a href="./pitchDeckHub/indexpitch.html" class="test-button" target="_blank">Test Link 2: ./pitchDeckHub/indexpitch.html</a><br>
+    <a href="/pitchDeckHub/indexpitch.html" class="test-button" target="_blank">Test Link 3: /pitchDeckHub/indexpitch.html</a><br>
+    
+    <h2>Same Tab Tests:</h2>
+    <a href="pitchDeckHub/indexpitch.html" class="test-button">Test Link 4: Same Tab</a><br>
+    
+    <h2>Button with JavaScript:</h2>
+    <button class="test-button" onclick="window.open('pitchDeckHub/indexpitch.html', '_blank')">Test Button with JS</button><br>
+    
+    <h2>File Structure Check:</h2>
+    <p>Current directory structure should be:</p>
+    <ul>
+        <li>index.html (main page)</li>
+        <li>about.html</li>
+        <li>pitchDeckHub/
+            <ul>
+                <li>indexpitch.html</li>
+                <li>chatbot/</li>
+                <li>gymFaceRecognition/</li>
+                <li>shared/</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <script>
+        console.log('Test page loaded');
+        console.log('Current URL:', window.location.href);
+        console.log('Base URL:', window.location.origin);
+    </script>
+</body>
+</html>

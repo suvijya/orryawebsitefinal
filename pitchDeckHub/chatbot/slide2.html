@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Silent Killers of Your Sales Pipeline - Orrya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../shared/navigation.css">
+    <link rel="stylesheet" href="../shared/slide-constraints.css">
+    <style>
+        /* Copied styles from your original slide2.html */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 40px 50px;
+        }
+        .title-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+        .problems-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 30px;
+            flex-grow: 1;
+        }
+        .problem-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .problem-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .problem-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+        .problem-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        .problem-text {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #e0e0e0;
+            flex-grow: 1;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        .accent-circle {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 50, 0.1);
+            bottom: -40px;
+            right: -40px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="title-section">
+                <h1 class="title">THE SILENT KILLERS OF YOUR SALES PIPELINE</h1>
+                <p class="subtitle">Every day, valuable leads are slipping through the cracks. Here's how.</p>
+            </div>
+            
+            <div class="problems-container">
+                <!-- Card 1: The 5-Minute Rule -->
+                <div class="problem-card">
+                    <div class="accent-circle"></div>
+                    <div class="problem-icon">
+                        <i class="fas fa-hourglass-end"></i>
+                    </div>
+                    <div class="problem-title">The 5-Minute Rule</div>
+                    <p class="problem-text">A lead's interest is highest the moment they inquire. If you don't respond in 5 minutes, your chance of converting them <span class="highlight">drops dramatically</span>. Most businesses can't keep up.</p>
+                </div>
+                
+                <!-- Card 2: The After-Hours Black Hole -->
+                <div class="problem-card">
+                    <div class="accent-circle"></div>
+                    <div class="problem-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="problem-title">The After-Hours Black Hole</div>
+                    <p class="problem-text">Your best leads often browse after 6 PM. By the time your team sees their message the next morning, that lead has already <span class="highlight">gone to a competitor</span> who was available.</p>
+                </div>
+                
+                <!-- Card 3: The Overwhelmed Team -->
+                <div class="problem-card">
+                    <div class="accent-circle"></div>
+                    <div class="problem-icon">
+                        <i class="fas fa-users-slash"></i>
+                    </div>
+                    <div class="problem-title">The Overwhelmed Team</div>
+                    <p class="problem-text">Your skilled salespeople are spending their valuable time answering the same basic questions, instead of focusing on what they do best: <span class="highlight">closing deals</span> with qualified buyers.</p>
+                </div>
+                
+                <!-- Card 4: The Impersonal Form -->
+                <div class="problem-card">
+                    <div class="accent-circle"></div>
+                    <div class="problem-icon">
+                        <i class="fab fa-wpforms"></i>
+                    </div>
+                    <div class="problem-title">The Impersonal Form</div>
+                    <p class="problem-text">A 'Contact Us' form feels like a dead end. It offers no immediate value, creates friction, and tells your visitors, <span class="highlight">"We'll get back to you... eventually."</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Navigation Elements -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <div class="slide-counter">
+        2 / 8
+    </div>
+    
+    <div class="slide-nav">
+        <a href="slide1.html" class="nav-button">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </a>
+        <a href="slide3.html" class="nav-button primary">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+</body>
+</html>

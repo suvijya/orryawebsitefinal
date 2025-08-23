@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start a Perfect Conversation, Every Single Time. - Orrya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../shared/navigation.css">
+    <link rel="stylesheet" href="../shared/slide-constraints.css">
+    <style>
+        /* Copied styles from your original slide3.html */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .slide {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1280px;
+        }
+        .title-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        .mockup-container {
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mockup-frame {
+            width: 100%;
+            height: auto;
+            background-color: #111;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+        }
+        .mockup-screen {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            color: #333;
+        }
+        .chat-header {
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .chat-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .chat-header-text {
+            font-weight: 600;
+        }
+        .chat-body {
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        .chat-bubble {
+            padding: 8px 12px;
+            border-radius: 15px;
+            margin-bottom: 8px;
+            max-width: 80%;
+            line-height: 1.4;
+        }
+        .bot-bubble {
+            background-color: #f1f1f1;
+            align-self: flex-start;
+        }
+        .user-bubble {
+            background-color: #DCF8C6;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .features-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 25px;
+        }
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .feature-text {
+            font-size: 16px;
+            line-height: 1.4;
+            color: #e0e0e0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        .accent-circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 50, 0.1);
+            bottom: -30px;
+            right: -30px;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .content-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .mockup-container {
+                width: 40%;
+                position: sticky;
+                top: 2rem;
+            }
+            .features-container {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="title-section">
+                <h1 class="title">START A PERFECT CONVERSATION, EVERY SINGLE TIME.</h1>
+                <p class="subtitle">Introducing the Conversation Engine: your best salesperson, working 24/7.</p>
+            </div>
+            
+            <div class="content-container">
+                <div class="mockup-container">
+                    <div class="mockup-frame">
+                        <div class="mockup-screen">
+                            <div class="chat-header">
+                                <img src="https://sfile.chatglm.cn/images-ppt/8ba50d30ca11.jpg" alt="Logo">
+                                <div class="chat-header-text">Orrya Assistant</div>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-bubble bot-bubble">Hi there! Welcome to Orrya. Are you interested in our lead generation services?</div>
+                                <div class="chat-bubble user-bubble">Yes, tell me more.</div>
+                                <div class="chat-bubble bot-bubble">Great! To give you the best info, could you tell me your company's industry?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-container">
+                    <div class="feature-card">
+                        <div class="accent-circle"></div>
+                        <div class="feature-title">Instant Engagement</div>
+                        <p class="feature-text">Greet every visitor on your website and WhatsApp within seconds, <span class="highlight">24 hours a day</span>. Never let an interested lead go cold again.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="accent-circle"></div>
+                        <div class="feature-title">Perfect Qualification</div>
+                        <p class="feature-text">Our engine asks the right questions to qualify leads automatically, so your sales team only talks to <span class="highlight">serious, high-intent buyers</span>.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="accent-circle"></div>
+                        <div class="feature-title">Seamless Handoff</div>
+                        <p class="feature-text">Once a lead is qualified, it's instantly sent to your sales team's phone with the full chat history. <span class="highlight">No more manual data entry</span>.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="accent-circle"></div>
+                        <div class="feature-title">Book Meetings Automatically</div>
+                        <p class="feature-text">For qualified leads, the engine can access your calendar and <span class="highlight">book a sales call directly</span>, filling your pipeline while you sleep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Navigation Elements -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <div class="slide-counter">
+        3 / 8
+    </div>
+    
+    <div class="slide-nav">
+        <a href="slide2.html" class="nav-button">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </a>
+        <a href="slide4.html" class="nav-button primary">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+</body>
+</html>

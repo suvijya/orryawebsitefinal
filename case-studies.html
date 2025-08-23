@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Orrya - Case Studies</title>
+    <meta name="description" content="Case studies and success stories from Orrya - Innovation Architects.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Required animation/3D libraries (match index.html) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="nav-logo-container">
+                    <div class="nav-logo-placeholder">
+                        <img src="topleft.png" alt="Orrya Logo" class="nav-logo-image">
+                    </div>
+                    <div class="nav-brand-text">
+                        <span class="logo-text">ORRYA</span>
+                        <span class="logo-subtitle">Innovation Architects</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#approach" class="nav-link">Approach</a>
+                <a href="case-studies.html" class="nav-link active">Cases</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="nav-mobile">
+            <a href="index.html#home" class="nav-link">Home</a>
+            <a href="index.html#services" class="nav-link">Services</a>
+            <a href="index.html#approach" class="nav-link">Approach</a>
+            <a href="case-studies.html" class="nav-link active">Cases</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <button class="theme-toggle" id="mobileThemeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Case Studies Section -->
+    <section id="cases" class="cases">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Case Studies</span>
+                <h2 class="section-title">Our Work & Success Stories</h2>
+                <p class="section-subtitle">Explore our real-world impact. Each card below is a case study. Add new ones in the marked area.</p>
+            </div>
+            <div class="cases-grid">
+                <!-- Existing Case Studies (examples) -->
+                <!-- Removed: Smart Campus System, AI Chatbot Platform, Moderation System -->
+                <!-- ========================= -->
+                <!-- ADD NEW CASE STUDIES BELOW THIS LINE -->
+                <!-- Example:
+                <div class="case-card">
+                    <div class="case-image">
+                        <div class="case-overlay"><i class="fas fa-rocket"></i></div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-category">Your Category</div>
+                        <h3 class="case-title">Your Project Title</h3>
+                        <p class="case-description">Short description of your project and its impact.</p>
+                    </div>
+                </div>
+                -->
+                <!-- ========================= -->
+                <!-- READY EXAMPLE CASE STUDIES (copy/paste these or follow the template below) -->
+                <div class="case-card">
+                    <div class="case-image">
+                        <div class="case-overlay"><i class="fas fa-hospital-user"></i></div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-category">Healthcare AI</div>
+                        <h3 class="case-title">RapidMedX: Smart Patient Triage</h3>
+                        <p class="case-description">AI-driven triage assistant for hospitals that reduced wait times by 40% and surfaced priority cases earlier for clinicians.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label">Wait Time ↓</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">85%</span>
+                                <span class="metric-label">Adoption</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="cases/rapidmedx-triage.html" class="cta-primary">View Case</a>
+                            <a href="index.html#contact" class="cta-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-image">
+                        <div class="case-overlay"><i class="fas fa-cloud"></i></div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-category">SaaS Automation</div>
+                        <h3 class="case-title">InvoiceFlow: Automated Billing Platform</h3>
+                        <p class="case-description">Scalable platform combining OCR, RPA and workflow automation to process invoices at enterprise scale and save 500+ man-hours/month.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-value">6x</span>
+                                <span class="metric-label">Throughput</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">92%</span>
+                                <span class="metric-label">Error ↓</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="cases/invoiceflow.html" class="cta-primary">View Case</a>
+                            <a href="index.html#contact" class="cta-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-image">
+                        <div class="case-overlay"><i class="fas fa-seedling"></i></div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-category">AgriTech IoT</div>
+                        <h3 class="case-title">SmartFarm: Precision Agriculture</h3>
+                        <p class="case-description">IoT sensor networks and ML analytics enabled precision irrigation and increased yields by 25% in pilot deployments.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-value">25%</span>
+                                <span class="metric-label">Yield ↑</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">30%</span>
+                                <span class="metric-label">Water ↓</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="cases/smartfarm.html" class="cta-primary">View Case</a>
+                            <a href="index.html#contact" class="cta-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-image">
+                        <div class="case-overlay"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-category">Cybersecurity</div>
+                        <h3 class="case-title">SecureNet: Real-Time Threat Detection</h3>
+                        <p class="case-description">Real-time anomaly detection using streaming analytics to detect and block fraudulent transactions with 99.2% accuracy.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-value">99.2%</span>
+                                <span class="metric-label">Detection</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">70%</span>
+                                <span class="metric-label">False Positives ↓</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="cases/securenet.html" class="cta-primary">View Case</a>
+                            <a href="index.html#contact" class="cta-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CASE STUDY TEMPLATE (copy and edit) -->
+                <!--
+                <div class="case-card">
+                    <a href="cases/your-case-slug.html" class="case-link" style="display:block; color:inherit; text-decoration:none;">
+                        <div class="case-image">
+                            <div class="case-overlay"><i class="fas fa-rocket"></i></div>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-category">Category</div>
+                            <h3 class="case-title">Project Title</h3>
+                            <p class="case-description">One-sentence summary, outcome, and impact (metrics if available).</p>
+                        </div>
+                    </a>
+                </div>
+                -->
+                <!-- ========================= -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-brand-text">ORRYA</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="index.html#services">AI Engineering</a>
+                        <a href="index.html#services">IoT Solutions</a>
+                        <a href="index.html#services">System Architecture</a>
+                        <a href="index.html#contact">Consultation</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="index.html#about">About Us</a>
+                        <a href="case-studies.html">Case Studies</a>
+                        <a href="index.html#approach">Our Approach</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Blog</a>
+                        <a href="#">Whitepapers</a>
+                        <a href="#">Open Source</a>
+                        <a href="#">Documentation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Orrya. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

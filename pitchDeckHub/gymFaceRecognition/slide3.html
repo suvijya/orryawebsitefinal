@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortify Your Profits. Redefine Your Brand. - Orrya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../shared/navigation.css">
+    <link rel="stylesheet" href="../shared/slide-constraints.css">
+    <style>
+        /* Copied styles from your original slide3.html */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .slide {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1280px;
+        }
+        .title-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        .mockup-container {
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mockup-frame {
+            width: 100%;
+            height: 240px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .mockup-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        .mockup-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .face-outline {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #4CAF50;
+            border-radius: 50%;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .face-outline::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85px;
+            height: 85px;
+            border: 2px dashed rgba(76, 175, 80, 0.5);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+        }
+        .welcome-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 5px;
+        }
+        .member-name {
+            font-size: 16px;
+            color: #e0e0e0;
+        }
+        .access-granted {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .features-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 25px;
+        }
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .feature-text {
+            font-size: 16px;
+            line-height: 1.4;
+            color: #e0e0e0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        .accent-circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 50, 0.1);
+            bottom: -30px;
+            right: -30px;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .content-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .mockup-container {
+                width: 40%;
+                position: sticky;
+                top: 2rem;
+            }
+            .features-container {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="title-section">
+                <!-- NEW, MORE POWERFUL TITLE -->
+                <h1 class="title">FORTIFY YOUR PROFITS. REDEFINE YOUR BRAND.</h1>
+                <p class="subtitle">Orrya is more than an entry system; it's your new business partner.</p>
+            </div>
+            
+            <div class="content-container">
+                <div class="mockup-container">
+                    <div class="mockup-frame">
+                        <div class="mockup-screen">
+                            <div class="access-granted">ACCESS GRANTED</div>
+                            <div class="face-outline"></div>
+                            <div class="welcome-text">Welcome, Priya!</div>
+                            <div class="member-name">Premium Member</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-container">
+                    <!-- Card 1: The Digital Bouncer -->
+                    <div class="feature-card">
+                        <div class="accent-circle"></div>
+                        <div class="feature-title">The Digital Bouncer</div>
+                        <p class="feature-text">Orrya is your always-on, 100% accurate gatekeeper. It instantly verifies active memberships, ensuring <span class="highlight">only paying members</span> get access. Revenue leaks from pass sharing stop. Instantly.</p>
+                    </div>
+                    
+                    <!-- Card 2: Your Signature Welcome -->
+                    <div class="feature-card">
+                        <div class="accent-circle"></div>
+                        <div class="feature-title">Your Signature Welcome</div>
+                        <p class="feature-text">The Orrya experience is your new handshake. A seamless, personal greeting that makes every member feel like a <span class="highlight">valued VIP</span>. This is the first step in building a community, not just a customer list.</p>
+                    </div>
+                    
+                    <!-- Card 3: Ironclad Security -->
+                    <div class="feature-card">
+                        <div class="accent-circle"></div>
+                        <div class="feature-title">Ironclad Security</div>
+                        <p class="feature-text">Get a clear, time-stamped record of everyone who enters. Enhance member safety, deter unauthorized access, and gain <span class="highlight">total control</span> over your environment.</p>
+                    </div>
+                    
+                    <!-- Card 4: The 'Wow' Factor -->
+                    <div class="feature-card">
+                        <div class="accent-circle"></div>
+                        <div class="feature-title">The 'Wow' Factor</div>
+                        <p class="feature-text">Offer an experience that members will talk about. This futuristic touch becomes a key reason they choose you and <span class="highlight">refer their friends</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Navigation Elements -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <div class="slide-counter">
+        3 / 8
+    </div>
+    
+    <div class="slide-nav">
+        <a href="slide2.html" class="nav-button">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </a>
+        <a href="slide4.html" class="nav-button primary">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Technology Behind The Transformation - Orrya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../shared/navigation.css">
+    <link rel="stylesheet" href="../shared/slide-constraints.css">
+    <style>
+        /* Copied styles from your original slide6.html */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .title-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            flex-grow: 1;
+        }
+        .tech-features {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px;
+        }
+        .tech-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .tech-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .tech-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        .tech-text {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #e0e0e0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        .accent-circle {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 50, 0.1);
+            bottom: -40px;
+            right: -40px;
+            z-index: 0;
+        }
+        .stats-container {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .accuracy-circle {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: conic-gradient(#4CAF50 0% 99.9%, #333 99.9% 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+            margin-bottom: 40px;
+        }
+        .accuracy-circle::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background-color: #1a1a1a;
+        }
+        .accuracy-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .accuracy-percentage {
+            font-size: 64px;
+            font-weight: 800;
+            color: #4CAF50;
+            line-height: 1;
+        }
+        .accuracy-label {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 5px;
+        }
+        @media (min-width: 992px) {
+            .content-container {
+                flex-direction: row;
+                align-items: center;
+            }
+            .tech-features {
+                width: 60%;
+            }
+            .stats-container {
+                width: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="title-section">
+                <!-- NEW, MORE POWERFUL TITLE -->
+                <h1 class="title">THE BRAINS BEHIND THE WELCOME</h1>
+                <p class="subtitle">Secure, reliable, and purpose-built for your gym.</p>
+            </div>
+            
+            <div class="content-container">
+                <div class="tech-features">
+                    <!-- Card 1 with new text -->
+                    <div class="tech-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-brain tech-icon"></i>
+                        <div class="tech-title">Surgical Accuracy</div>
+                        <p class="tech-text">Powered by a world-class AI engine with <span class="highlight">99.9% accuracy</span>. It works in different lighting conditions and recognizes faces in a fraction of a second.</p>
+                    </div>
+                    
+                    <!-- Card 2 with new text -->
+                    <div class="tech-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-shield-alt tech-icon"></i>
+                        <div class="tech-title">Fort Knox Security</div>
+                        <p class="tech-text">We take privacy seriously. All member data is encrypted and stored securely. <span class="highlight">Your data is your data.</span> Period.</p>
+                    </div>
+                    
+                    <!-- Card 3 with new text -->
+                    <div class="tech-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-bolt tech-icon"></i>
+                        <div class="tech-title">Built for India's Hustle</div>
+                        <p class="tech-text">Our system is designed to work in the unique environment of Indian fitness centers, handling <span class="highlight">high traffic and diverse conditions</span>.</p>
+                    </div>
+                    
+                    <!-- Card 4 with new text -->
+                    <div class="tech-card">
+                        <div class="accent-circle"></div>
+                        <i class="fas fa-sync-alt tech-icon"></i>
+                        <div class="tech-title">Always Evolving</div>
+                        <p class="tech-text">We are constantly updating our software to be faster and smarter, ensuring your gym <span class="highlight">always has the latest technology</span>.</p>
+                    </div>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="accuracy-circle">
+                        <div class="accuracy-text">
+                            <div class="accuracy-percentage">99.9%</div>
+                            <div class="accuracy-label">ACCURACY RATE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Navigation Elements -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <div class="slide-counter">
+        6 / 8
+    </div>
+    
+    <div class="slide-nav">
+        <a href="slide5.html" class="nav-button">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </a>
+        <a href="slide7.html" class="nav-button primary">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+</body>
+</html>
