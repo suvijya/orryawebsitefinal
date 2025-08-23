@@ -745,8 +745,8 @@ function initContactForm() {
         submitBtn.disabled = true;
         
         try {
-            // Send to backend API
-            const response = await fetch('http://localhost:5000/api/contact', {
+            // Send to MySQL backend API
+            const response = await fetch('http://localhost:3001/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -756,6 +756,7 @@ function initContactForm() {
                     email: data.email,
                     company: data.company || null,
                     phone: data.phone || null,
+                    service: data.service || null,
                     message: data.message
                 })
             });
