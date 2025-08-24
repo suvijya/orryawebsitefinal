@@ -2354,6 +2354,15 @@ section {
     border-radius: 1px;
 }
 
+/* Ensure the header logo link doesn't show an underline or change color */
+.nav-logo-link,
+.nav-logo-link .nav-brand-text,
+.nav-logo-link .logo-text,
+.nav-logo-link .logo-subtitle {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
 /* Mobile Responsive for About Page */
 @media (max-width: 768px) {
     .about-hero {
