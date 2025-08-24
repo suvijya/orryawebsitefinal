@@ -8,6 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Local page styles to match site theme */
+        .privacy-hero {
+            padding-top: 6.5rem;
+            padding-bottom: 3rem;
+            background: var(--bg);
+        }
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+            align-items: start;
+        }
+        .privacy-aside {
+            background: var(--surface-dark);
+            padding: 1.25rem;
+            border-radius: 12px;
+        }
+        .privacy-hero .hero-title {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.75rem;
+        }
+        @media (max-width: 880px) {
+            .privacy-grid { grid-template-columns: 1fr; }
+            .privacy-aside { order: 2; }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -42,20 +69,16 @@
     </nav>
 
     <main>
-        <section class="hero" style="padding-top:6.5rem; min-height:40vh;">
-            <div class="hero-content" style="max-width:1100px; margin:0 auto; padding:2rem;">
-                <div style="display:flex; gap:1rem; align-items:center; margin-bottom:1rem;">
-                    <div style="width:88px; height:88px; overflow:hidden; border-radius:12px;">
-                        <img src="topleft.png" alt="Orrya" style="width:100%; height:100%; object-fit:cover;">
-                    </div>
-                    <div>
-                        <h1 style="margin:0; font-size:1.5rem;">Privacy Policy</h1>
-                        <p style="margin:0.25rem 0 0; color:var(--text-secondary-dark);">How Orrya collects, uses, and protects information.</p>
-                    </div>
+        <section class="privacy-hero">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Legal</span>
+                    <h1 class="section-title">Privacy Policy</h1>
+                    <p class="section-subtitle">How Orrya collects, uses, and protects information.</p>
                 </div>
 
-                <div style="display:grid; grid-template-columns:1fr 320px; gap:2rem; margin-top:1.5rem;">
-                    <div>
+                <div class="privacy-grid">
+                    <div class="privacy-content">
                         <h2>Summary</h2>
                         <p>We respect your privacy. This page explains what data we collect, why we collect it, and how you can control it. We aim to keep data collection minimal and use it to provide and improve our services.</p>
 
@@ -77,11 +100,11 @@
                         <h2>Third Parties</h2>
                         <p>We may use third-party services (analytics, hosting, email delivery). These providers have their own privacy terms; we select vendors that adhere to accepted security practices.</p>
 
-                        <h2>Cookies & Tracking</h2>
+                        <h2>Cookies &amp; Tracking</h2>
                         <p>We use cookies for session management and analytics. You can control cookies via your browser settings. Disabling cookies may reduce website functionality.</p>
 
                         <h2>Your Rights</h2>
-                        <p>You can request access to data we hold about you, request correction or deletion, or object to processing. To exercise these rights contact us at <a href="mailto:privacy@orrya.example">privacy@orrya.example</a>.</p>
+                        <p>You can request access to data we hold about you, request correction or deletion, or object to processing. To exercise these rights contact us at <a href="mailto:support@orrya.co">support@orrya.co</a>.</p>
 
                         <h2>Security</h2>
                         <p>We implement reasonable security measures to protect data. No system is perfect; if a breach occurs we will notify affected users where required by law.</p>
@@ -90,10 +113,10 @@
                         <p>We may update this policy occasionally. The "last updated" date appears at the top of this page. Please review periodically.</p>
 
                         <h2>Contact</h2>
-                        <p>For privacy questions, email <a href="mailto:privacy@orrya.example">privacy@orrya.example</a> or use the contact form on our <a href="index.html#contact">Contact</a> section.</p>
+                        <p>For privacy questions, email <a href="mailto:support@orrya.co">support@orrya.co</a> or use the contact form on our <a href="index.html#contact">Contact</a> section.</p>
                     </div>
 
-                    <aside style="background:var(--surface-dark); padding:1.25rem; border-radius:12px;">
+                    <aside class="privacy-aside">
                         <h3 style="margin-top:0;">Quick Facts</h3>
                         <p><strong>Controller:</strong> Orrya</p>
                         <p><strong>Data retention:</strong> As required to provide services, typically 1 year unless stated otherwise.</p>
