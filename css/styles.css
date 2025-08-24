@@ -2572,6 +2572,31 @@ body[data-theme="light"] #contact .contact-form .form-group textarea::placeholde
     color: #6b7280 !important; /* slightly muted placeholder */
 }
 
+/* Light mode: green borders for card-like components to improve affordance */
+body[data-theme="light"] .service-card,
+body[data-theme="light"] .case-card,
+body[data-theme="light"] .team-card,
+body[data-theme="light"] .value-card,
+body[data-theme="light"] .showcase-item,
+body[data-theme="light"] .testimonial-card,
+body[data-theme="light"] .service-card::before,
+body[data-theme="light"] .team-card::before {
+    border: 1px solid var(--primary-color) !important;
+    box-shadow: 0 2px 8px rgba(76,175,80,0.06);
+}
+
+/* Slightly stronger highlight on hover for light theme */
+body[data-theme="light"] .service-card:hover,
+body[data-theme="light"] .case-card:hover,
+body[data-theme="light"] .team-card:hover,
+body[data-theme="light"] .value-card:hover,
+body[data-theme="light"] .showcase-item:hover,
+body[data-theme="light"] .testimonial-card.active,
+body[data-theme="light"] .testimonial-card:hover {
+    border-color: var(--primary-dark) !important;
+    box-shadow: 0 8px 24px rgba(76,175,80,0.12) !important;
+}
+
 
 /* Cookie banner styles */
 .cookie-banner {
