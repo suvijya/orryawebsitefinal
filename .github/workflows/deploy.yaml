@@ -4,11 +4,18 @@ on:
     branches:
       -main
 jobs:
-  deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Build Jekyll Site 
+        uses: helaili/jekyll-action@v2
+        with:
+          target_path: '_site'
+          build_options: '--trace'
+
+
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
         with:
