@@ -68,8 +68,40 @@ function startLoadingSequence() {
             loader.style.display = 'none';
             isLoading = false;
             startHeroAnimations();
+            // Show cookie banner after loading completes
+            initCookieBanner();
         }
     });
+}
+
+// Cookie banner
+function initCookieBanner() {
+    try {
+        const accepted = localStorage.getItem('cookiesAccepted');
+        const declined = localStorage.getItem('cookiesDeclined');
+        const banner = document.getElementById('cookieBanner');
+        const acceptBtn = document.getElementById('cookieAccept');
+        const declineBtn = document.getElementById('cookieDecline');
+
+        if (!banner || accepted === 'true' || declined === 'true') return;
+
+        // show banner
+        banner.setAttribute('aria-hidden', 'false');
+
+        acceptBtn && acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            banner.setAttribute('aria-hidden', 'true');
+            // Optionally initialize analytics here
+        });
+
+        declineBtn && declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookiesDeclined', 'true');
+            banner.setAttribute('aria-hidden', 'true');
+            // Optionally disable analytics cookies here
+        });
+    } catch (e) {
+        console.warn('Cookie banner init failed', e);
+    }
 }
 
 function initLoader() {

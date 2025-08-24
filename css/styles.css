@@ -188,11 +188,13 @@ button, .nav-link, .cta-primary, .cta-secondary, .card-link, .case-link {
     width: 96px;
     height: 96px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: transparent;
+    box-shadow: none;
+    border: none;
     position: relative;
     overflow: hidden;
 }
@@ -204,8 +206,9 @@ button, .nav-link, .cta-primary, .cta-secondary, .card-link, .case-link {
 .loading-logo-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
 }
 
 .loading-brand-text {
@@ -328,11 +331,13 @@ button, .nav-link, .cta-primary, .cta-secondary, .card-link, .case-link {
     width: 56px;
     height: 56px;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.1); /* Added for visibility */
+    background: transparent; /* removed visible box behind logo */
+    box-shadow: none;
+    border: none;
     position: relative;
     flex-shrink: 0;
     overflow: hidden;
@@ -345,8 +350,12 @@ button, .nav-link, .cta-primary, .cta-secondary, .card-link, .case-link {
 .nav-logo-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    /* ensure no border or background bleed on the image */
+    border: none;
+    box-shadow: none;
 }
 
 .nav-brand-text {
@@ -521,6 +530,34 @@ button, .nav-link, .cta-primary, .cta-secondary, .card-link, .case-link {
 /* Make logo placeholder subtle on light theme */
 [data-theme="light"] .nav-logo-placeholder {
     background: transparent;
+}
+
+/* Light theme form adjustments: keep borders and contrast for inputs and contact form */
+[data-theme="light"] .contact-form {
+    background: var(--surface-light);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--text-primary-dark);
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group textarea {
+    background: var(--surface-light);
+    border: 1px solid rgba(0,0,0,0.12);
+    color: var(--text-primary-dark);
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group select:focus,
+[data-theme="light"] .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(33,150,243,0.08);
+}
+
+[data-theme="light"] .form-group input::placeholder,
+[data-theme="light"] .form-group textarea::placeholder {
+    color: var(--text-secondary-dark);
 }
 
 /* Select and option contrast in dark/light modes */
@@ -1500,6 +1537,82 @@ section {
     transition: var(--transition);
 }
 
+/* --- Enforce light-theme form contrast (placed at end to override earlier rules) --- */
+[data-theme="light"] .contact .contact-form,
+[data-theme="light"] .contact-form {
+    background: var(--surface-light);
+    border: 1px solid rgba(0,0,0,0.12);
+    color: var(--text-primary-dark);
+}
+    [data-theme="light"] .contact .form-group input,
+    [data-theme="light"] .contact .form-group select,
+    [data-theme="light"] .contact .form-group textarea,
+    [data-theme="light"] .form-group input,
+    [data-theme="light"] .form-group select,
+    [data-theme="light"] .form-group textarea {
+        background: var(--surface-light) !important;
+        border: 1px solid rgba(0,0,0,0.14) !important;
+        color: var(--text-primary-dark) !important;
+    }
+    [data-theme="light"] .contact .form-group input::placeholder,
+    [data-theme="light"] .contact .form-group textarea::placeholder,
+    [data-theme="light"] .form-group input::placeholder,
+    [data-theme="light"] .form-group textarea::placeholder {
+        color: var(--text-secondary-dark) !important;
+    }
+    [data-theme="light"] .contact .form-group input:focus,
+    [data-theme="light"] .contact .form-group select:focus,
+    [data-theme="light"] .contact .form-group textarea:focus,
+    [data-theme="light"] .form-group input:focus,
+    [data-theme="light"] .form-group select:focus,
+    [data-theme="light"] .form-group textarea:focus {
+        outline: none !important;
+        border-color: var(--primary-color) !important;
+        box-shadow: 0 0 0 4px rgba(33,150,243,0.10) !important;
+    }
+    [data-theme="light"] .contact .form-group select,
+    [data-theme="light"] .form-group select {
+        border: 1px solid rgba(0,0,0,0.12) !important;
+        background: var(--surface-light) !important;
+    }
+
+[data-theme="light"] .contact .form-group input,
+[data-theme="light"] .contact .form-group select,
+[data-theme="light"] .contact .form-group textarea,
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group textarea {
+    background: var(--surface-light) !important;
+    border: 1px solid rgba(0,0,0,0.14) !important;
+    color: var(--text-primary-dark) !important;
+}
+
+[data-theme="light"] .contact .form-group input::placeholder,
+[data-theme="light"] .contact .form-group textarea::placeholder,
+[data-theme="light"] .form-group input::placeholder,
+[data-theme="light"] .form-group textarea::placeholder {
+    color: var(--text-secondary-dark) !important;
+}
+
+[data-theme="light"] .contact .form-group input:focus,
+[data-theme="light"] .contact .form-group select:focus,
+[data-theme="light"] .contact .form-group textarea:focus,
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group select:focus,
+[data-theme="light"] .form-group textarea:focus {
+    outline: none !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 4px rgba(33,150,243,0.10) !important;
+}
+
+/* ensure select dropdown in contact form also shows border in light mode */
+[data-theme="light"] .contact .form-group select,
+[data-theme="light"] .form-group select {
+    border: 1px solid rgba(0,0,0,0.12) !important;
+    background: var(--surface-light) !important;
+}
+
+
 .form-submit:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
@@ -2434,4 +2547,73 @@ section {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* Force contact form white background + green borders in light mode */
+body[data-theme="light"] #contact .contact-form,
+body[data-theme="light"] #contact .contact-form .form-group input,
+body[data-theme="light"] #contact .contact-form .form-group textarea,
+body[data-theme="light"] #contact .contact-form .form-group select {
+    background: #ffffff !important;
+    border: 1px solid var(--primary-color) !important;
+    color: var(--text-primary-dark) !important;
+}
+
+body[data-theme="light"] #contact .contact-form .form-group input::placeholder,
+body[data-theme="light"] #contact .contact-form .form-group textarea::placeholder {
+    color: #6b7280 !important; /* slightly muted placeholder */
+}
+
+
+/* Cookie banner styles */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 240ms cubic-bezier(.2,.9,.2,1);
+  opacity: 0;
+  transform: translateY(18px);
+}
+.cookie-banner[aria-hidden="false"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.cookie-inner {
+  background: var(--surface, #ffffff);
+  color: var(--text-primary, #0b1220);
+  padding: 1rem 1rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(12,18,28,0.12);
+  width: calc(100% - 40px);
+  max-width: 980px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid rgba(11,18,32,0.06);
+}
+
+.cookie-text { max-width: 64%; }
+.cookie-text strong { display:block; font-size:1rem; }
+.cookie-text p { margin:0.25rem 0 0; color:var(--text-secondary-dark, #6b7280); font-size:0.95rem; }
+
+.cookie-actions { margin-left: auto; display:flex; gap:0.5rem; align-items:center; }
+.cookie-actions .btn { padding:0.5rem 0.9rem; font-size:0.95rem; border-radius:8px; }
+.cookie-actions .btn-ghost { background: transparent; border: 1px solid rgba(11,18,32,0.06); }
+.cookie-actions .btn-primary { background: var(--accent, #2563eb); color: #fff; border: none; }
+.cookie-link { color: var(--accent, #2563eb); text-decoration: underline; margin-right:0.5rem; font-size:0.95rem; }
+
+@media (max-width: 720px) {
+  .cookie-inner { flex-direction: column; align-items: stretch; padding: 0.9rem; gap:0.75rem; }
+  .cookie-text { max-width: 100%; }
+  .cookie-text p { font-size:0.95rem; }
+  .cookie-actions { margin-left: 0; justify-content: flex-end; }
+  .cookie-actions .btn { width: 100%; }
+  .cookie-actions .cookie-link { width: 100%; text-align: left; }
 }
